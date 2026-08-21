@@ -1,7 +1,7 @@
-import { photos } from "./media"
+import { photos } from "./media";
 
 export type Service = {
-  slug: string
+  slug: string;
   icon:
     | "Flame"
     | "Thermometer"
@@ -10,15 +10,15 @@ export type Service = {
     | "Droplets"
     | "Zap"
     | "Home"
-    | "AlertTriangle"
-  title: string
-  shortTitle: string
-  summary: string
-  description: string[]
-  bullets: string[]
-  image: number
-  gallery: number[]
-}
+    | "AlertTriangle";
+  title: string;
+  shortTitle: string;
+  summary: string;
+  description: string[];
+  bullets: string[];
+  image: number;
+  gallery: number[];
+};
 
 export const services: Service[] = [
   {
@@ -63,7 +63,11 @@ export const services: Service[] = [
       "Advice on the right boiler for your home",
     ],
     image: photos.engineerHelmet,
-    gallery: [photos.hardhatClipboard, photos.clipboardConstruction, photos.workerHardhat1],
+    gallery: [
+      photos.hardhatClipboard,
+      photos.clipboardConstruction,
+      photos.workerHardhat1,
+    ],
   },
   {
     slug: "central-heating",
@@ -85,7 +89,11 @@ export const services: Service[] = [
       "Underfloor heating support",
     ],
     image: photos.familyKitchen1,
-    gallery: [photos.familyKitchenCooking, photos.familyKitchenPrepping, photos.bathroomFreestandingTub],
+    gallery: [
+      photos.familyKitchenCooking,
+      photos.familyKitchenPrepping,
+      photos.bathroomFreestandingTub,
+    ],
   },
   {
     slug: "plumbing",
@@ -107,7 +115,11 @@ export const services: Service[] = [
       "General plumbing repairs & maintenance",
     ],
     image: photos.bathroomModern1,
-    gallery: [photos.bathroomModern2, photos.bathroomShowerCabin, photos.faucetSteelSink],
+    gallery: [
+      photos.bathroomModern2,
+      photos.bathroomShowerCabin,
+      photos.faucetSteelSink,
+    ],
   },
   {
     slug: "pipework-drainage",
@@ -129,7 +141,11 @@ export const services: Service[] = [
       "Outdoor tap & pipe installation",
     ],
     image: photos.copperPipes,
-    gallery: [photos.steelPipesCloseup, photos.plumberPipeFittings, photos.wrenchWoodSurface],
+    gallery: [
+      photos.steelPipesCloseup,
+      photos.plumberPipeFittings,
+      photos.wrenchWoodSurface,
+    ],
   },
   {
     slug: "electrical-services",
@@ -151,7 +167,11 @@ export const services: Service[] = [
       "General electrical maintenance",
     ],
     image: photos.electricianSwitchboard,
-    gallery: [photos.electricianSockets1, photos.electricianSockets2, photos.electricianSolar],
+    gallery: [
+      photos.electricianSockets1,
+      photos.electricianSockets2,
+      photos.electricianSolar,
+    ],
   },
   {
     slug: "property-maintenance",
@@ -173,7 +193,11 @@ export const services: Service[] = [
       "Priority response for managing agents",
     ],
     image: photos.londonTerraced1,
-    gallery: [photos.londonStreetHouses, photos.londonTerraced2, photos.londonThinHouse],
+    gallery: [
+      photos.londonStreetHouses,
+      photos.londonTerraced2,
+      photos.londonThinHouse,
+    ],
   },
   {
     slug: "emergency-repairs",
@@ -195,41 +219,51 @@ export const services: Service[] = [
       "Temporary make-safe & permanent fix",
     ],
     image: photos.workerOrangeHardhat,
-    gallery: [photos.workerSafetyHelmet, photos.workerHelmetStanding, photos.workerPortrait1],
+    gallery: [
+      photos.workerSafetyHelmet,
+      photos.workerHelmetStanding,
+      photos.workerPortrait1,
+    ],
   },
-]
+];
 
-export const getServiceBySlug = (slug: string) => services.find((s) => s.slug === slug)
+export const getServiceBySlug = (slug: string) =>
+  services.find((s) => s.slug === slug);
 
 export const stats = [
   { label: "Availability", value: "24/7", suffix: "" },
   { label: "Services covered", value: "8", suffix: "+" },
   { label: "Response focus", value: "Same-day", suffix: "" },
   { label: "Coverage", value: "Enfield & London", suffix: "" },
-]
+];
 
 export const processSteps = [
   {
     title: "Get in touch",
-    description: "Call, message or fill in our contact form with what's going on — day or night for emergencies.",
+    description:
+      "Call, message or fill in our contact form with what's going on — day or night for emergencies.",
   },
   {
     title: "Free, no-obligation quote",
-    description: "We talk through the job and give you a clear price before any work begins.",
+    description:
+      "We talk through the job and give you a clear price before any work begins.",
   },
   {
     title: "Engineer visits your property",
-    description: "A qualified, insured engineer arrives at the agreed time, ready with the right parts and tools.",
+    description:
+      "A qualified, insured engineer arrives at the agreed time, ready with the right parts and tools.",
   },
   {
     title: "Work completed safely",
-    description: "We carry out the job to current safety standards and leave your property clean and tidy.",
+    description:
+      "We carry out the job to current safety standards and leave your property clean and tidy.",
   },
   {
     title: "Certification & aftercare",
-    description: "You receive any relevant paperwork, plus advice on keeping your system running well.",
+    description:
+      "You receive any relevant paperwork, plus advice on keeping your system running well.",
   },
-]
+];
 
 export const testimonials = [
   {
@@ -238,6 +272,7 @@ export const testimonials = [
     quote:
       "Called about a boiler that wouldn't fire up on a cold morning and had an engineer out the same day. Explained everything clearly and got the heating back on fast.",
     rating: 5,
+    service: "Boilers",
   },
   {
     name: "Michael R.",
@@ -245,6 +280,7 @@ export const testimonials = [
     quote:
       "Used them for a full bathroom re-plumb. Tidy work, turned up when they said they would, and the price matched the quote exactly.",
     rating: 5,
+    service: "Plumbing",
   },
   {
     name: "Priya S.",
@@ -252,6 +288,7 @@ export const testimonials = [
     quote:
       "Gas safety check for my rental property was booked in quickly and the certificate was sent over the same week. Straightforward and professional.",
     rating: 5,
+    service: "Gas Safety",
   },
   {
     name: "David O.",
@@ -259,6 +296,7 @@ export const testimonials = [
     quote:
       "Had a burst pipe late in the evening — they picked up straight away and talked me through shutting off the water until the engineer arrived.",
     rating: 5,
+    service: "Emergency Call-Outs",
   },
   {
     name: "Aisha B.",
@@ -266,6 +304,7 @@ export const testimonials = [
     quote:
       "New radiators fitted throughout the house. Good communication from quote to completion and the house is noticeably warmer.",
     rating: 5,
+    service: "Central Heating",
   },
   {
     name: "Tom H.",
@@ -273,18 +312,43 @@ export const testimonials = [
     quote:
       "As a letting agent I need contractors who show up and communicate. This team has been reliable across several of our properties.",
     rating: 5,
+    service: "Property Maintenance",
   },
-]
+  {
+    name: "Sophie K.",
+    location: "Ponders End",
+    quote:
+      "Consumer unit was well overdue an upgrade. Explained the options clearly and the new sockets in the home office are exactly what we needed.",
+    rating: 5,
+    service: "Electrical",
+  },
+  {
+    name: "Liam P.",
+    location: "Enfield",
+    quote:
+      "Suspected a leak under the kitchen floor for weeks. They traced it accurately without ripping the whole floor up and fixed it the same visit.",
+    rating: 5,
+    service: "Pipework & Drainage",
+  },
+  {
+    name: "Grace N.",
+    location: "Southgate",
+    quote:
+      "Booked our annual boiler service and they reminded us it was due before we even thought about it. Easy to deal with every time.",
+    rating: 5,
+    service: "Boilers",
+  },
+];
 
 export type Project = {
-  id: string
-  title: string
-  category: string
-  location: string
-  image: number
-  video?: keyof typeof import("./media").videos
-  description: string
-}
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  image: number;
+  video?: keyof typeof import("./media").videos;
+  description: string;
+};
 
 export const projects: Project[] = [
   {
@@ -293,7 +357,8 @@ export const projects: Project[] = [
     category: "Boiler Services",
     location: "Enfield",
     image: photos.engineerHelmet,
-    description: "Old back boiler removed and replaced with a modern, energy-efficient combi system.",
+    description:
+      "Old back boiler removed and replaced with a modern, energy-efficient combi system.",
   },
   {
     id: "bathroom-replumb",
@@ -301,7 +366,8 @@ export const projects: Project[] = [
     category: "Plumbing",
     location: "Edmonton",
     image: photos.bathroomModern2,
-    description: "Complete strip-out and re-plumb for a family bathroom, including new shower and vanity unit.",
+    description:
+      "Complete strip-out and re-plumb for a family bathroom, including new shower and vanity unit.",
   },
   {
     id: "central-heating-upgrade",
@@ -309,7 +375,8 @@ export const projects: Project[] = [
     category: "Central Heating",
     location: "Southgate",
     image: photos.familyKitchenCooking,
-    description: "New radiators, updated pipework and smart thermostat installed across a three-bedroom home.",
+    description:
+      "New radiators, updated pipework and smart thermostat installed across a three-bedroom home.",
   },
   {
     id: "landlord-gas-check",
@@ -317,7 +384,8 @@ export const projects: Project[] = [
     category: "Gas Safety",
     location: "Multiple sites, North London",
     image: photos.clipboardConstruction,
-    description: "Ongoing annual gas safety checks across a portfolio of rental properties.",
+    description:
+      "Ongoing annual gas safety checks across a portfolio of rental properties.",
   },
   {
     id: "emergency-leak",
@@ -325,7 +393,8 @@ export const projects: Project[] = [
     category: "Pipework & Drainage",
     location: "Ponders End",
     image: photos.copperPipes,
-    description: "Hidden leak traced behind a kitchen wall and repaired same-day with minimal disruption.",
+    description:
+      "Hidden leak traced behind a kitchen wall and repaired same-day with minimal disruption.",
   },
   {
     id: "electrical-rewire",
@@ -333,7 +402,8 @@ export const projects: Project[] = [
     category: "Electrical",
     location: "Waltham Cross",
     image: photos.electricianSwitchboard,
-    description: "Switchboard replacement and additional sockets fitted for a home office conversion.",
+    description:
+      "Switchboard replacement and additional sockets fitted for a home office conversion.",
   },
   {
     id: "commercial-maintenance",
@@ -341,7 +411,8 @@ export const projects: Project[] = [
     category: "Property Maintenance",
     location: "Enfield Town",
     image: photos.londonStreetHouses,
-    description: "Scheduled multi-trade maintenance visits keeping a retail unit compliant and running smoothly.",
+    description:
+      "Scheduled multi-trade maintenance visits keeping a retail unit compliant and running smoothly.",
   },
   {
     id: "kitchen-fit",
@@ -349,9 +420,10 @@ export const projects: Project[] = [
     category: "Plumbing",
     location: "Enfield",
     image: photos.kitchenSinkFaucet,
-    description: "New sink, mixer tap and integrated appliance plumbing for a kitchen renovation.",
+    description:
+      "New sink, mixer tap and integrated appliance plumbing for a kitchen renovation.",
   },
-]
+];
 
 export const faqs = [
   {
@@ -394,12 +466,13 @@ export const faqs = [
     answer:
       "We accept bank transfer and card payment. Payment details and any applicable terms are confirmed with your quote before work begins.",
   },
-]
+];
 
 export const whyChooseUs = [
   {
     title: "Qualified & insured",
-    description: "Every job is carried out by experienced, insured engineers who take safety seriously.",
+    description:
+      "Every job is carried out by experienced, insured engineers who take safety seriously.",
   },
   {
     title: "24/7 availability",
@@ -407,10 +480,12 @@ export const whyChooseUs = [
   },
   {
     title: "Clear, upfront pricing",
-    description: "You'll always know the cost before work begins, with no hidden surprises.",
+    description:
+      "You'll always know the cost before work begins, with no hidden surprises.",
   },
   {
     title: "One team, every trade",
-    description: "Gas, heating, plumbing, electrical and maintenance — one number to call for it all.",
+    description:
+      "Gas, heating, plumbing, electrical and maintenance — one number to call for it all.",
   },
-]
+];

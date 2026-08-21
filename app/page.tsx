@@ -1,26 +1,23 @@
-import Link from "next/link"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
-import { SiteShell } from "@/components/site-shell"
-import { HeroSection } from "@/components/hero-section"
-import { TrustMarquee } from "@/components/trust-marquee"
-import { SectionHeading } from "@/components/section-heading"
-import { ServiceCard } from "@/components/service-card"
-import { ProcessSteps } from "@/components/process-steps"
-import { TestimonialCard } from "@/components/testimonial-card"
-import { FaqAccordion } from "@/components/faq-accordion"
-import { CtaBanner } from "@/components/cta-banner"
-import { Reveal } from "@/components/reveal"
-import { Button } from "@/components/ui/button"
-import { services, testimonials, whyChooseUs, projects } from "@/lib/data"
-import { pexelsPhoto, photos } from "@/lib/media"
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { SiteShell } from "@/components/site-shell";
+import { HeroSection } from "@/components/hero-section";
+import { SectionHeading } from "@/components/section-heading";
+import { ServiceCard } from "@/components/service-card";
+import { TestimonialMarquee } from "@/components/testimonial-marquee";
+import { FaqAccordion } from "@/components/faq-accordion";
+import { CtaBanner } from "@/components/cta-banner";
+import { Reveal } from "@/components/reveal";
+import { Button } from "@/components/ui/button";
+import { services, whyChooseUs, projects } from "@/lib/data";
+import { pexelsPhoto, photos } from "@/lib/media";
 
 export default function HomePage() {
-  const featuredProjects = projects.slice(0, 3)
+  const featuredProjects = projects.slice(0, 3);
 
   return (
     <SiteShell>
       <HeroSection />
-      <TrustMarquee />
 
       {/* Services */}
       <section className="section-y">
@@ -32,7 +29,11 @@ export default function HomePage() {
               description="From a single leaking tap to a full boiler installation, our engineers cover the full range of gas, heating, plumbing, electrical and maintenance work."
             />
             <Reveal>
-              <Button asChild variant="outline" className="rounded-full shrink-0 bg-transparent">
+              <Button
+                asChild
+                variant="outline"
+                className="rounded-full shrink-0 bg-transparent"
+              >
                 <Link href="/services">
                   View all services
                   <ArrowRight className="size-4" />
@@ -63,7 +64,11 @@ export default function HomePage() {
               </div>
               <div className="hidden sm:flex absolute -bottom-8 -right-6 lg:-right-10 w-56 rounded-2xl bg-white border border-border shadow-xl p-5 flex-col gap-2">
                 <div className="flex -space-x-2">
-                  {[photos.workerPortrait1, photos.workerSafetyHelmet, photos.workerOrangeHardhat].map((id) => (
+                  {[
+                    photos.workerPortrait1,
+                    photos.workerSafetyHelmet,
+                    photos.workerOrangeHardhat,
+                  ].map((id) => (
                     <img
                       key={id}
                       src={pexelsPhoto(id, 120)}
@@ -72,8 +77,12 @@ export default function HomePage() {
                     />
                   ))}
                 </div>
-                <p className="text-sm font-semibold text-brand-blue-950">Experienced, vetted engineers</p>
-                <p className="text-xs text-muted-foreground">On call across Enfield &amp; London</p>
+                <p className="text-sm font-semibold text-brand-blue-950">
+                  Experienced, vetted engineers
+                </p>
+                <p className="text-xs text-muted-foreground">
+                  On call across Enfield &amp; London
+                </p>
               </div>
             </div>
           </Reveal>
@@ -90,15 +99,22 @@ export default function HomePage() {
                   <div className="flex gap-3">
                     <CheckCircle2 className="size-5 text-brand-red-500 shrink-0 mt-0.5" />
                     <div>
-                      <h3 className="font-semibold text-brand-blue-950 text-sm">{item.title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                      <h3 className="font-semibold text-brand-blue-950 text-sm">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
                   </div>
                 </Reveal>
               ))}
             </div>
             <Reveal delay={0.3}>
-              <Button asChild className="mt-9 rounded-full bg-brand-blue-700 hover:bg-brand-blue-800">
+              <Button
+                asChild
+                className="mt-9 rounded-full bg-brand-blue-700 hover:bg-brand-blue-800"
+              >
                 <Link href="/about">
                   More about our team
                   <ArrowRight className="size-4" />
@@ -106,20 +122,6 @@ export default function HomePage() {
               </Button>
             </Reveal>
           </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="section-y">
-        <div className="container-custom">
-          <SectionHeading
-            align="center"
-            eyebrow="How it works"
-            title="Simple from first call to finished job"
-            description="No jargon, no surprises — just a clear process from your first message to a completed, safety-checked job."
-            className="mb-12"
-          />
-          <ProcessSteps />
         </div>
       </section>
 
@@ -149,7 +151,10 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {featuredProjects.map((project, i) => (
               <Reveal key={project.id} delay={i * 0.1}>
-                <Link href="/portfolio" className="group relative block overflow-hidden rounded-2xl aspect-[4/5]">
+                <Link
+                  href="/portfolio"
+                  className="group relative block overflow-hidden rounded-2xl aspect-[4/5]"
+                >
                   <img
                     src={pexelsPhoto(project.image, 800)}
                     alt={project.title}
@@ -161,7 +166,9 @@ export default function HomePage() {
                     <span className="text-xs font-semibold uppercase tracking-wide text-brand-red-400">
                       {project.category}
                     </span>
-                    <h3 className="mt-1 font-display font-bold text-white">{project.title}</h3>
+                    <h3 className="mt-1 font-display font-bold text-white">
+                      {project.title}
+                    </h3>
                   </div>
                 </Link>
               </Reveal>
@@ -171,14 +178,15 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-y">
+      <section className="section-y bg-white overflow-hidden">
         <div className="container-custom">
-          <SectionHeading align="center" eyebrow="Customer feedback" title="What people are saying" className="mb-12" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {testimonials.slice(0, 6).map((t, i) => (
-              <TestimonialCard key={t.name} testimonial={t} index={i} />
-            ))}
-          </div>
+          <SectionHeading
+            align="center"
+            eyebrow="Customer feedback"
+            title="What people are saying"
+            className="mb-12"
+          />
+          <TestimonialMarquee />
         </div>
       </section>
 
@@ -192,7 +200,11 @@ export default function HomePage() {
               description="Can't find what you're looking for? Get in touch and we'll be glad to help."
             />
             <Reveal delay={0.15}>
-              <Button asChild variant="outline" className="mt-8 rounded-full bg-transparent">
+              <Button
+                asChild
+                variant="outline"
+                className="mt-8 rounded-full bg-transparent"
+              >
                 <Link href="/faq">
                   View all FAQs
                   <ArrowRight className="size-4" />
@@ -206,5 +218,5 @@ export default function HomePage() {
 
       <CtaBanner />
     </SiteShell>
-  )
+  );
 }
