@@ -1,17 +1,17 @@
-import Link from "next/link"
-import { Phone, ArrowRight } from "lucide-react"
-import { siteConfig } from "@/lib/site-config"
-import { Button } from "@/components/ui/button"
-import { Reveal } from "@/components/reveal"
+import Link from "next/link";
+import { Phone, ArrowRight } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/reveal";
 
 export function CtaBanner({
   title = "Need an engineer out today?",
   description = "Call now for a fast response, or send us the details and we'll get back to you with a free quote.",
   compact = false,
 }: {
-  title?: string
-  description?: string
-  compact?: boolean
+  title?: string;
+  description?: string;
+  compact?: boolean;
 }) {
   return (
     <section className={compact ? "py-14 lg:py-16" : "section-y"}>
@@ -24,7 +24,9 @@ export function CtaBanner({
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight text-balance leading-[1.1]">
                 {title}
               </h2>
-              <p className="mt-4 text-white/85 text-base sm:text-lg leading-relaxed">{description}</p>
+              <p className="mt-4 text-white/85 text-base sm:text-lg leading-relaxed">
+                {description}
+              </p>
               <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <Button
                   asChild
@@ -53,5 +55,5 @@ export function CtaBanner({
         </Reveal>
       </div>
     </section>
-  )
+  );
 }
