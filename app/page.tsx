@@ -87,7 +87,7 @@ export default function HomePage() {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-blue-950/30 via-transparent to-transparent" />
                 </div>
 
-                {/* Visible below image on mobile, overlapping on larger screens */}
+                {/* Engineer information */}
                 <div className="relative mt-4 flex w-full flex-col gap-3 rounded-2xl border border-border bg-white p-5 shadow-lg sm:absolute sm:-bottom-2 sm:right-4 sm:mt-0 sm:w-64 lg:-right-8">
                   <div className="flex -space-x-2">
                     {[
@@ -270,28 +270,45 @@ export default function HomePage() {
             className="pointer-events-none absolute -right-32 bottom-0 size-80 rounded-full bg-brand-blue-700/10 blur-3xl"
           />
 
-          <div className="container-custom relative grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
-            <div className="lg:sticky lg:top-28 lg:self-start">
-              <SectionHeading
-                eyebrow="Common questions"
-                title="Answers before you call"
-                description="Can't find what you're looking for? Get in touch and we'll be glad to help."
-              />
+          <div className="container-custom relative grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start lg:gap-16">
+            {/* Left side */}
+            <div className="self-start">
+              {/* Centred on phones */}
+              <div className="sm:hidden">
+                <SectionHeading
+                  align="center"
+                  eyebrow="Common questions"
+                  title="Answers before you call"
+                  description="Can't find what you're looking for? Get in touch and we'll be glad to help."
+                />
+              </div>
+
+              {/* Left aligned on tablets and laptops */}
+              <div className="hidden sm:block">
+                <SectionHeading
+                  eyebrow="Common questions"
+                  title="Answers before you call"
+                  description="Can't find what you're looking for? Get in touch and we'll be glad to help."
+                />
+              </div>
 
               <Reveal delay={0.15}>
-                <Button
-                  asChild
-                  variant="outline"
-                  className="group mt-8 w-full rounded-full bg-transparent sm:w-auto"
-                >
-                  <Link href="/faq">
-                    View all FAQs
-                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </Button>
+                <div className="flex justify-center sm:justify-start">
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="group mt-7 h-11 min-w-[190px] rounded-full bg-transparent px-7 text-sm"
+                  >
+                    <Link href="/faq">
+                      View all FAQs
+                      <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                    </Link>
+                  </Button>
+                </div>
               </Reveal>
             </div>
 
+            {/* Right side */}
             <Reveal delay={0.1}>
               <div className="rounded-3xl border border-border bg-white p-4 shadow-sm sm:p-7">
                 <FaqAccordion limit={5} />
