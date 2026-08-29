@@ -240,7 +240,7 @@ import { Menu, Phone, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig, navLinks } from "@/lib/site-config";
 import { services } from "@/lib/data";
-import { Logo, LogoMark } from "@/components/logo";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
 
 import {
@@ -297,29 +297,13 @@ export function Header() {
           <Link
             href="/"
             aria-label={`${siteConfig.name} home`}
-            className="flex min-w-0 flex-1 items-center gap-2"
+            className="flex min-w-0 flex-1 items-center"
           >
-            <LogoMark className="size-7 shrink-0" />
-
-            <div className="flex flex-col leading-none">
-              <span
-                className={cn(
-                  "font-display text-[13px] font-bold uppercase tracking-tight transition-colors duration-300",
-                  scrolled ? "text-brand-blue-950" : "text-white",
-                )}
-              >
-                GSP
-              </span>
-
-              <span
-                className={cn(
-                  "mt-1 font-display text-[15px] font-bold transition-colors duration-300",
-                  scrolled ? "text-brand-red-600" : "text-white",
-                )}
-              >
-                Engineering
-              </span>
-            </div>
+            <Logo
+              priority
+              className="rounded-xl px-1.5 py-1 shadow-sm"
+              imageClassName="h-9"
+            />
           </Link>
 
           {/* Phone actions */}
@@ -369,19 +353,9 @@ export function Header() {
                     <Link
                       href="/"
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center gap-2 pr-8"
+                      className="flex items-center pr-8"
                     >
-                      <LogoMark className="size-8 shrink-0" />
-
-                      <div className="flex flex-col leading-none">
-                        <span className="font-display text-sm font-bold uppercase tracking-tight text-brand-blue-950">
-                          GSP
-                        </span>
-
-                        <span className="mt-1 font-display text-base font-bold text-brand-red-600">
-                          Engineering
-                        </span>
-                      </div>
+                      <Logo imageClassName="h-11" />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
@@ -466,15 +440,13 @@ export function Header() {
             initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 rounded-full bg-brand-blue-950 py-2 pl-2.5 pr-4 shadow-lg shadow-black/10"
+            className="rounded-full bg-white px-2 py-1 shadow-lg shadow-black/10"
           >
-            <LogoMark className="h-7 w-7" />
-
-            <span className="flex flex-col leading-none">
-              <span className="font-display text-sm font-bold text-white">
-                GSP <span className="text-brand-red-400">Engineering</span>
-              </span>
-            </span>
+            <Logo
+              priority
+              className="rounded-full px-1.5 py-1"
+              imageClassName="h-10"
+            />
           </motion.div>
         </Link>
 

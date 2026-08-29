@@ -51,7 +51,26 @@ export const metadata: Metadata = {
     description: siteConfig.description,
   },
   icons: {
-    icon: "/icon.svg",
+    icon: [
+      {
+        url: "/brand/gsp-logo-mark-32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/brand/gsp-logo-mark-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
+    shortcut: "/brand/gsp-logo-mark-32.png",
+    apple: [
+      {
+        url: "/brand/gsp-logo-mark-180.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
   },
 }
 

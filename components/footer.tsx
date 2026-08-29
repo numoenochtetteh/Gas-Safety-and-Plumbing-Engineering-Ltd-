@@ -102,7 +102,10 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Business information */}
           <div className="sm:col-span-2 lg:col-span-4">
-            <Logo dark />
+            <Logo
+              className="border border-white/10 px-3 py-2 shadow-lg shadow-black/10"
+              imageClassName="h-12"
+            />
 
             <p className="mt-5 max-w-sm text-sm leading-7 text-white/60">
               {siteConfig.description}

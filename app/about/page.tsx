@@ -62,7 +62,7 @@ const team = [
   {
     role: "Electrical Engineer",
     focus: "Installations, fault-finding & repairs",
-    image: photos.workerSafetyHelmet,
+    image: "/images/electrical-engineer.jpg",
   },
   {
     role: "Operations & Scheduling",

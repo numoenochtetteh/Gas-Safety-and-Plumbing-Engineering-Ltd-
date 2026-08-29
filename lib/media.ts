@@ -4,8 +4,12 @@
  * photo/video ID — see the comment beside each constant for the source page.
  */
 
-export function pexelsPhoto(id: number, width = 1600) {
-  return `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${width}`
+export type PhotoSource = number | string
+
+export function pexelsPhoto(source: PhotoSource, width = 1600) {
+  if (typeof source === "string") return source
+
+  return `https://images.pexels.com/photos/${source}/pexels-photo-${source}.jpeg?auto=compress&cs=tinysrgb&w=${width}`
 }
 
 export function pexelsVideoPoster(id: number, width = 1600) {

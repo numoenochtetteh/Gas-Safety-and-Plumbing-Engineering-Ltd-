@@ -7,7 +7,6 @@ import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { siteConfig } from "@/lib/site-config";
-import { photos } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -54,7 +53,10 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk about your job"
         description="Send us the details for a free quote, or call our 24/7 line if you need help right now."
-        image={photos.londonThinHouse}
+        image="/images/contact-us.jpg"
+        imagePosition="50% 45%"
+        titleClassName="lg:max-w-none"
+        descriptionClassName="lg:max-w-none lg:whitespace-nowrap"
         crumbs={[{ label: "Contact" }]}
       />
 

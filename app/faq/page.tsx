@@ -4,7 +4,6 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { CtaBanner } from "@/components/cta-banner";
-import { photos } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "FAQ",
@@ -19,7 +18,8 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title="Frequently asked questions"
         description="Everything you need to know before you book. Can't find your answer? Get in touch and we'll help."
-        image={photos.hardhatClipboard}
+        image="/images/frequently-asked-questions.jpg"
+        imagePosition="68% center"
         crumbs={[{ label: "FAQ" }]}
       />
 

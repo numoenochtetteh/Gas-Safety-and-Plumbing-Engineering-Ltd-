@@ -1,4 +1,4 @@
-import { photos } from "./media";
+import { photos, type PhotoSource } from "./media";
 
 export type Service = {
   slug: string;
@@ -16,8 +16,8 @@ export type Service = {
   summary: string;
   description: string[];
   bullets: string[];
-  image: number;
-  gallery: number[];
+  image: PhotoSource;
+  gallery: PhotoSource[];
 };
 
 export const services: Service[] = [
@@ -62,11 +62,11 @@ export const services: Service[] = [
       "Boiler upgrades for efficiency",
       "Advice on the right boiler for your home",
     ],
-    image: photos.engineerHelmet,
+    image: "/images/boiler.jpg",
     gallery: [
-      photos.hardhatClipboard,
-      photos.clipboardConstruction,
-      photos.workerHardhat1,
+      "/images/b1.jpg",
+      "/images/b2.jpg",
+      "/images/b3.jpg",
     ],
   },
   {
@@ -88,11 +88,11 @@ export const services: Service[] = [
       "Thermostat & smart heating control setup",
       "Underfloor heating support",
     ],
-    image: photos.familyKitchen1,
+    image: "/images/central.jpg",
     gallery: [
-      photos.familyKitchenCooking,
-      photos.familyKitchenPrepping,
-      photos.bathroomFreestandingTub,
+      "/images/c1.avif",
+      "/images/c2.avif",
+      "/images/c3.jpg",
     ],
   },
   {
@@ -194,9 +194,9 @@ export const services: Service[] = [
     ],
     image: photos.londonTerraced1,
     gallery: [
-      photos.londonStreetHouses,
-      photos.londonTerraced2,
-      photos.londonThinHouse,
+      "/images/b2.jpg",
+      "/images/c2.avif",
+      "/images/e2.jpg",
     ],
   },
   {
@@ -218,11 +218,11 @@ export const services: Service[] = [
       "Electrical fault emergencies",
       "Temporary make-safe & permanent fix",
     ],
-    image: photos.workerOrangeHardhat,
+    image: "/images/eme.jpeg",
     gallery: [
-      photos.workerSafetyHelmet,
-      photos.workerHelmetStanding,
-      photos.workerPortrait1,
+      "/images/e1.jpg",
+      "/images/e2.jpg",
+      "/images/e3.jpg",
     ],
   },
 ];
@@ -345,7 +345,7 @@ export type Project = {
   title: string;
   category: string;
   location: string;
-  image: number;
+  image: PhotoSource;
   video?: keyof typeof import("./media").videos;
   description: string;
 };
@@ -356,7 +356,7 @@ export const projects: Project[] = [
     title: "Combi Boiler Replacement",
     category: "Boiler Services",
     location: "Enfield",
-    image: photos.engineerHelmet,
+    image: "/images/combi-boiler-replacement.jpg",
     description:
       "Old back boiler removed and replaced with a modern, energy-efficient combi system.",
   },
@@ -374,7 +374,7 @@ export const projects: Project[] = [
     title: "Whole-House Heating Upgrade",
     category: "Central Heating",
     location: "Southgate",
-    image: photos.familyKitchenCooking,
+    image: "/images/whole-house-heating-upgrade.jpg",
     description:
       "New radiators, updated pipework and smart thermostat installed across a three-bedroom home.",
   },
@@ -419,7 +419,7 @@ export const projects: Project[] = [
     title: "Kitchen Sink & Appliance Plumbing",
     category: "Plumbing",
     location: "Enfield",
-    image: photos.kitchenSinkFaucet,
+    image: "/images/sink.jpg",
     description:
       "New sink, mixer tap and integrated appliance plumbing for a kitchen renovation.",
   },

@@ -154,19 +154,26 @@ import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 
 import { pexelsPhoto } from "@/lib/media";
+import { cn } from "@/lib/utils";
 
 export function PageHero({
   eyebrow,
   title,
   description,
   image,
+  imagePosition = "center",
   crumbs,
+  titleClassName,
+  descriptionClassName,
 }: {
   eyebrow: string;
   title: string;
   description?: string;
   image: number | string;
+  imagePosition?: string;
   crumbs: { label: string; href?: string }[];
+  titleClassName?: string;
+  descriptionClassName?: string;
 }) {
   const backgroundImage =
     typeof image === "number" ? pexelsPhoto(image, 1920) : image;
@@ -179,6 +186,7 @@ export function PageHero({
           src={backgroundImage}
           alt=""
           className="h-full w-full object-cover object-center"
+          style={{ objectPosition: imagePosition }}
           loading="eager"
         />
 
@@ -227,13 +235,23 @@ export function PageHero({
         </div>
 
         {/* Heading */}
-        <h1 className="max-w-4xl text-balance font-display text-4xl font-bold leading-[1.03] tracking-[-0.035em] text-white drop-shadow-sm sm:text-5xl lg:text-[4.5rem]">
+        <h1
+          className={cn(
+            "max-w-4xl text-balance font-display text-4xl font-bold leading-[1.03] tracking-[-0.035em] text-white drop-shadow-sm sm:text-5xl lg:text-[4.5rem]",
+            titleClassName,
+          )}
+        >
           {title}
         </h1>
 
         {/* Description */}
         {description && (
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-white/90 drop-shadow-sm sm:text-lg lg:text-xl">
+          <p
+            className={cn(
+              "mt-6 max-w-3xl text-base leading-relaxed text-white/90 drop-shadow-sm sm:text-lg lg:text-xl",
+              descriptionClassName,
+            )}
+          >
             {description}
           </p>
         )}
