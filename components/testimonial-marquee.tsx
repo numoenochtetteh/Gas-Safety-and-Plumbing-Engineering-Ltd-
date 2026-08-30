@@ -1,182 +1,6 @@
-// "use client";
-
-// import { Quote } from "lucide-react";
-
-// import { testimonials } from "@/lib/data";
-
-// type Testimonial = (typeof testimonials)[number];
-
-// function TestimonialSlide({ testimonial }: { testimonial: Testimonial }) {
-//   return (
-//     <article className="flex min-h-[410px] w-[88vw] max-w-[1100px] shrink-0 flex-col justify-between rounded-[2rem] bg-gradient-to-br from-brand-blue-50 via-white to-slate-50 p-6 sm:min-h-[440px] sm:p-10 lg:min-h-[480px] lg:p-14">
-//       {/* Quote */}
-//       <div>
-//         <div className="flex size-11 items-center justify-center rounded-full bg-brand-red-50 text-brand-red-600 sm:size-12">
-//           <Quote className="size-5 fill-current" />
-//         </div>
-
-//         <blockquote className="mt-7 sm:mt-9">
-//           <p className="max-w-5xl text-balance font-display text-2xl font-semibold leading-[1.25] tracking-[-0.025em] text-brand-blue-950 sm:text-4xl lg:text-5xl lg:leading-[1.18]">
-//             “{testimonial.quote}”
-//           </p>
-//         </blockquote>
-//       </div>
-
-//       {/* Customer */}
-//       <footer className="mt-10 flex flex-col gap-5 border-t border-brand-blue-100 pt-6 sm:flex-row sm:items-center sm:justify-between">
-//         <div className="flex min-w-0 items-center gap-3">
-//           <div className="flex size-11 shrink-0 items-center justify-center rounded-full bg-brand-blue-950 text-sm font-bold text-white sm:size-12">
-//             {testimonial.name.charAt(0).toUpperCase()}
-//           </div>
-
-//           <div className="min-w-0">
-//             <p className="truncate text-sm font-semibold text-brand-blue-950 sm:text-base">
-//               {testimonial.name}
-//             </p>
-
-//             <p className="mt-0.5 truncate text-xs text-muted-foreground sm:text-sm">
-//               {testimonial.location}
-//             </p>
-//           </div>
-//         </div>
-
-//         <span className="w-fit rounded-full bg-brand-red-50 px-3.5 py-1.5 text-xs font-semibold text-brand-red-700 sm:text-sm">
-//           {testimonial.service}
-//         </span>
-//       </footer>
-//     </article>
-//   );
-// }
-
-// function TestimonialGroup({ duplicate = false }: { duplicate?: boolean }) {
-//   return (
-//     <div
-//       aria-hidden={duplicate ? "true" : undefined}
-//       className={`flex shrink-0 gap-5 pr-5 sm:gap-6 sm:pr-6 ${
-//         duplicate ? "testimonial-editorial-copy" : ""
-//       }`}
-//     >
-//       {testimonials.map((testimonial, index) => (
-//         <TestimonialSlide
-//           key={`${duplicate ? "duplicate" : "original"}-${
-//             testimonial.name
-//           }-${index}`}
-//           testimonial={testimonial}
-//         />
-//       ))}
-//     </div>
-//   );
-// }
-
-// export function TestimonialMarquee() {
-//   return (
-//     <div className="testimonial-editorial-marquee relative">
-//       {/* Moving viewport */}
-//       <div className="testimonial-editorial-fade overflow-hidden">
-//         <div className="testimonial-editorial-track flex w-max will-change-transform">
-//           {/* Original testimonials */}
-//           <TestimonialGroup />
-
-//           {/* Duplicate testimonials for the seamless loop */}
-//           <TestimonialGroup duplicate />
-//         </div>
-//       </div>
-
-//       {/* Motion information */}
-//       <div className="mt-6 flex items-center justify-center gap-2 text-xs font-medium text-muted-foreground">
-//         <span className="size-1.5 rounded-full bg-brand-red-500" />
-//         <span>Reviews from customers across Enfield and London</span>
-//       </div>
-
-//       <style jsx global>{`
-//         @keyframes testimonial-editorial-scroll {
-//           from {
-//             transform: translateX(0);
-//           }
-
-//           to {
-//             transform: translateX(-50%);
-//           }
-//         }
-
-//         .testimonial-editorial-track {
-//           animation: testimonial-editorial-scroll 75s linear infinite;
-//         }
-
-//         .testimonial-editorial-marquee:hover .testimonial-editorial-track,
-//         .testimonial-editorial-marquee:focus-within
-//           .testimonial-editorial-track {
-//           animation-play-state: paused;
-//         }
-
-//         .testimonial-editorial-fade {
-//           -webkit-mask-image: linear-gradient(
-//             to right,
-//             transparent,
-//             black 3%,
-//             black 97%,
-//             transparent
-//           );
-
-//           mask-image: linear-gradient(
-//             to right,
-//             transparent,
-//             black 3%,
-//             black 97%,
-//             transparent
-//           );
-//         }
-
-//         @media (max-width: 639px) {
-//           .testimonial-editorial-fade {
-//             -webkit-mask-image: linear-gradient(
-//               to right,
-//               transparent,
-//               black 1.5%,
-//               black 98.5%,
-//               transparent
-//             );
-
-//             mask-image: linear-gradient(
-//               to right,
-//               transparent,
-//               black 1.5%,
-//               black 98.5%,
-//               transparent
-//             );
-//           }
-
-//           .testimonial-editorial-track {
-//             animation-duration: 62s;
-//           }
-//         }
-
-//         @media (prefers-reduced-motion: reduce) {
-//           .testimonial-editorial-track {
-//             animation: none !important;
-//           }
-
-//           .testimonial-editorial-copy {
-//             display: none;
-//           }
-
-//           .testimonial-editorial-fade {
-//             overflow-x: auto;
-//             scrollbar-width: none;
-//             -webkit-mask-image: none;
-//             mask-image: none;
-//           }
-
-//           .testimonial-editorial-fade::-webkit-scrollbar {
-//             display: none;
-//           }
-//         }
-//       `}</style>
-//     </div>
-//   );
-// }
 "use client";
 
+import { useState } from "react";
 import { Quote, Star } from "lucide-react";
 
 import { testimonials } from "@/lib/data";
@@ -259,9 +83,27 @@ function TestimonialGroup({ duplicate = false }: { duplicate?: boolean }) {
 }
 
 export function TestimonialMarquee() {
+  const [mobilePaused, setMobilePaused] = useState(false);
+
+  const toggleMobilePause = () => {
+    if (window.matchMedia("(max-width: 639px)").matches) {
+      setMobilePaused((paused) => !paused);
+    }
+  };
+
   return (
-    <div className="testimonial-marquee relative">
-      <div className="testimonial-viewport overflow-hidden py-3">
+    <div
+      className={`testimonial-marquee relative ${
+        mobilePaused ? "testimonial-mobile-paused" : ""
+      }`}
+    >
+      <div
+        className="testimonial-viewport overflow-hidden py-3"
+        onClick={toggleMobilePause}
+        aria-label={
+          mobilePaused ? "Resume customer reviews" : "Pause customer reviews"
+        }
+      >
         <div className="testimonial-track flex w-max will-change-transform">
           <TestimonialGroup />
           <TestimonialGroup duplicate />
@@ -270,7 +112,14 @@ export function TestimonialMarquee() {
 
       <div className="mt-5 flex items-center justify-center gap-2 text-xs font-medium text-muted-foreground">
         <span className="size-1.5 rounded-full bg-brand-red-500" />
-        <span>Hover to pause and read</span>
+
+        {/* Phone instruction */}
+        <span className="sm:hidden">
+          {mobilePaused ? "Tap to continue" : "Tap to pause and read"}
+        </span>
+
+        {/* Tablet and desktop instruction */}
+        <span className="hidden sm:inline">Hover to pause and read</span>
       </div>
 
       <style jsx global>{`
@@ -288,9 +137,11 @@ export function TestimonialMarquee() {
           animation: testimonial-scroll-left 72s linear infinite;
         }
 
-        .testimonial-marquee:hover .testimonial-track,
-        .testimonial-marquee:focus-within .testimonial-track {
-          animation-play-state: paused;
+        @media (hover: hover) and (pointer: fine) {
+          .testimonial-marquee:hover .testimonial-track,
+          .testimonial-marquee:focus-within .testimonial-track {
+            animation-play-state: paused;
+          }
         }
 
         .testimonial-viewport {
@@ -314,6 +165,10 @@ export function TestimonialMarquee() {
         @media (max-width: 639px) {
           .testimonial-track {
             animation-duration: 60s;
+          }
+
+          .testimonial-mobile-paused .testimonial-track {
+            animation-play-state: paused;
           }
 
           .testimonial-viewport {
